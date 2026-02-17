@@ -126,25 +126,24 @@
         }
 
         .archive {
-            max-width: 1140px;
+            max-width: 1180px;
             margin: 0 auto 5rem;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
-            gap: 1.6rem;
+            grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+            gap: 1.5rem;
         }
 
         /* ── CARDS ── */
         .doc-card {
             background: linear-gradient(150deg, #130f09 0%, #1a1309 60%, #100d08 100%);
             border: 1px solid #281808;
-            padding: 1.7rem;
+            padding: 1.6rem;
             cursor: pointer;
             transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
             position: relative;
         }
 
-        /* Corner marks */
         .doc-card::before, .doc-card::after {
             content: '';
             position: absolute;
@@ -158,13 +157,13 @@
         .doc-card:hover {
             border-color: #4e2e10;
             transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6), 0 0 18px rgba(100,50,8,0.07);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
         }
 
         .doc-icon  { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
 
         .doc-badge {
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             letter-spacing: 0.18em;
             color: #3e2410;
             border: 1px solid #221408;
@@ -175,25 +174,25 @@
 
         .doc-title {
             font-family: 'Cinzel', serif;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             color: #c09848;
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.6rem;
             line-height: 1.4;
             letter-spacing: 0.03em;
         }
 
         .doc-preview {
-            font-size: 0.88rem;
+            font-size: 0.87rem;
             color: #4e3018;
-            line-height: 1.65;
+            line-height: 1.6;
             font-style: italic;
         }
 
         .doc-meta {
-            margin-top: 1.1rem;
-            padding-top: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 0.7rem;
             border-top: 1px solid #1c1208;
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: #321c08;
             letter-spacing: 0.07em;
         }
@@ -209,14 +208,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         .card-img-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 100%;
+            object-fit: cover; display: block;
         }
 
         .card-img-frame img.broken { display: none; }
@@ -227,11 +223,11 @@
             align-items: center;
             gap: 0.5rem;
             color: #2e1c0a;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             letter-spacing: 0.12em;
         }
 
-        .card-img-placeholder .ph-icon { font-size: 1.8rem; opacity: 0.5; }
+        .card-img-placeholder .ph-icon { font-size: 1.8rem; opacity: 0.45; }
 
         /* ── MODAL ── */
         .modal-overlay {
@@ -252,7 +248,7 @@
         .modal {
             background: linear-gradient(170deg, #1a1208 0%, #110d06 100%);
             border: 1px solid #3e2812;
-            max-width: 700px;
+            max-width: 680px;
             width: 100%;
             margin: auto;
             padding: 3.5rem 3.5rem 3rem;
@@ -289,7 +285,7 @@
         .modal-badge {
             display: block;
             text-align: center;
-            font-size: 0.62rem;
+            font-size: 0.6rem;
             letter-spacing: 0.4em;
             color: #3e2812;
             margin-bottom: 0.9rem;
@@ -297,7 +293,7 @@
 
         .modal-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #d8b858;
             text-align: center;
             letter-spacing: 0.07em;
@@ -312,42 +308,52 @@
             font-size: 0.75rem;
         }
 
-        /* Text document content */
+        /* ── MODAL CONTENT ── */
         .modal-content {
             font-size: 1rem;
             line-height: 1.9;
             color: #9a7040;
         }
 
-        .modal-content p { margin-bottom: 1.05rem; }
+        .modal-content p { margin-bottom: 1rem; }
         .modal-content p:last-child { margin-bottom: 0; }
         .modal-content em { color: #c09848; font-style: italic; }
 
-        .modal-content .scratched {
-            text-decoration: line-through;
-            opacity: 0.4;
-        }
-
-        .modal-content .marginnote {
-            font-size: 0.87rem;
-            color: #5e3c1c;
+        /* Poem / song verse */
+        .modal-content .verse {
+            text-align: center;
             font-style: italic;
-            border-left: 2px solid #221408;
-            padding: 0.55rem 0 0.55rem 1.1rem;
-            margin: 1.2rem 0;
-            line-height: 1.7;
+            color: #c09848;
+            line-height: 2.1;
+            margin: 1rem 0 1.2rem;
         }
 
+        /* Stone inscription */
         .modal-content .inscription {
             text-align: center;
             font-style: italic;
             color: #b88840;
-            line-height: 2.15;
-            letter-spacing: 0.03em;
-            margin: 1.3rem 0;
+            line-height: 2.2;
+            letter-spacing: 0.04em;
+            margin: 1rem 0;
+            font-size: 1.05rem;
         }
 
-        .modal-content .centered { text-align: center; }
+        /* Attribution / source tag */
+        .modal-content .source-tag {
+            font-size: 0.86rem;
+            color: #5e3c1c;
+            font-style: italic;
+            margin-top: 1.2rem;
+        }
+
+        /* Burned / damaged text */
+        .modal-content .damaged {
+            color: #5a3a1a;
+            font-style: italic;
+            opacity: 0.65;
+            margin-bottom: 0.4rem !important;
+        }
 
         /* Image modal */
         .modal-img-wrap { width: 100%; margin: 0.5rem 0 1.2rem; }
@@ -389,7 +395,7 @@
         }
 
         @media (max-width: 580px) {
-            .modal { padding: 2.5rem 1.6rem 2rem; }
+            .modal { padding: 2.5rem 1.5rem 2rem; }
             .candles { gap: 3rem; }
         }
     </style>
@@ -398,18 +404,9 @@
 
 <header>
     <div class="candles">
-        <div class="candle">
-            <div class="flame"></div>
-            <div class="candle-body"></div>
-        </div>
-        <div class="candle">
-            <div class="flame"></div>
-            <div class="candle-body"></div>
-        </div>
-        <div class="candle">
-            <div class="flame"></div>
-            <div class="candle-body"></div>
-        </div>
+        <div class="candle"><div class="flame"></div><div class="candle-body"></div></div>
+        <div class="candle"><div class="flame"></div><div class="candle-body"></div></div>
+        <div class="candle"><div class="flame"></div><div class="candle-body"></div></div>
     </div>
     <p class="title-eyebrow">SKYGGEKONGENS KAMMER &nbsp;·&nbsp; FUNNE FRAGMENTER</p>
     <h1 class="title-main">DOKUMENTARKIVET</h1>
@@ -439,311 +436,237 @@
 <footer>ARKIVET ER IKKE KOMPLETT &nbsp;·&nbsp; NOEN SANNHETER BRENNER BARE I ILDEN</footer>
 
 <script>
-/* ─────────────────────────────────────────────
-   DOCUMENT DATA
-   Each text document hints at 1–2 substances.
-   No document reveals the sequence/order.
-───────────────────────────────────────────── */
+/*
+ * REGLER:
+ * - Ingen kilde nevner mer enn 1–2 stoffer.
+ * - Ingen kilder refererer til hverandre.
+ * - De fleste vet ikke om Skyggekongen.
+ * - Rekkefølgen til låsen er aldri oppgitt.
+ */
 const documents = [
 
-    /* ── 1 · SALT → gul ── */
+    /* ── 1 · Aldor – konseptet "flammen vet" (ingen farger) ── */
     {
-        id: 'gruve',
-        type: 'text',
-        icon: '⛏️',
-        badge: 'RAPPORT · GRUVEN VED SIVSTADEN',
-        title: 'Formannens kvartalsvise rapport',
-        preview: 'Et rutinedokument med en uvanlig merknad fra smeden...',
-        meta: 'Funnet: Skrivebordet · Tilstand: God, lett gulnet',
-        content: `
-            <p><em>Til Rådsmann Orvyn.</em></p>
-
-            <p>Herved min kvartalsvise rapport fra gruven ved Sivstaden, datert den 14. i andre driftsmåned.</p>
-
-            <p>Uttaket er tilfredsstillende. De to mineralårene i den nedre tunnelen gir fortsatt
-            jevn avkastning. Mineralet er av vanlig kvalitet – gråhvitt, beskjedent, egnet til de
-            formålene det alltid har tjent.</p>
-
-            <p>En hendelse fra forrige uke verdt å nevne: smeden Arn testet et fragment av den
-            nye mineralvenen for å kartlegge sammensetning og smeltegrad. I stedet for den
-            forventede brunrøde reaksjonen lysnet fragmentet opp med en merkelig, varm farge da
-            det nådde varmen fra essen. Arn beskrev det som <em>«honning holdt mot sollyset»</em> eller
-            <em>«moden hvete i september»</em>. Han har jobbet i smia i tyve år og ble genuint overrasket.</p>
-
-            <div class="marginnote">
-                [Margnotat, tilføyd i ettertid, annen hånd:]<br>
-                Bestillingsordren spesifiserte «uvanlige egenskaper ved oppvarming». Kanskje dette
-                er det de mente. Det grå ligner ikke det det er.
-            </div>
-
-            <p>Ingen andre hendelser av betydning denne kvartalen.</p>
-
-            <p><em>Med aktelse, Hallvard Bergmann, gruveformann</em></p>
-        `
-    },
-
-    /* ── 2 · MYR-LOTUS → hvit ── */
-    {
-        id: 'botanisk',
-        type: 'text',
-        icon: '🌿',
-        badge: 'FELTNOTAT · SØRMYRA · VANDRING III',
-        title: 'Botanisk feltnotat',
-        preview: 'Skrevet av en forsker på feltarbeid. Én observasjon er understreket to ganger...',
-        meta: 'Funnet: Skjult under bokhyllen · Tilstand: Fuktskadet i nedre kant',
-        content: `
-            <p><em>Tredje dag, Vandring III. Sørmyra.</em></p>
-
-            <p>Tett bestand av den mørke sumpblomsten ved det lave vannet sørvest for vadestedet.
-            Blomstene er karakteristisk mørkegrønne, nesten svarte under det tette bladverket,
-            med en svak og muggent lukt. Vokser i klynger ved røttene til de halvt nedsunkne
-            trærne.</p>
-
-            <p>Tørket én prøve over kveldsilden for å konservere for transport. Observerte noe
-            uventet: røyken og restene fra den brennende planten var uvanlig blek –
-            <em>nesten hvit</em>, i sterk kontrast til plantens egne mørke farger. Vanligvis vil
-            røyken fra grønt plantemateriale bære noe av fargen. Ikke her.</p>
-
-            <div class="marginnote">
-                [Understreket to ganger:] «Den mørke myr-lotusblomsten gir hvitt ved sin slutt.»<br>
-                Funnet i Wester-urtelegen fra Gamleby. Konteksten er uklar. Fant samme formulering
-                i ytterligere ett skrift, men kan ikke huske hvilket nå.
-            </div>
-
-            <p>Spurte en gammel myrgubbe i landsbyen om han kjente til planten. Han nikket
-            og sa bare: <em>«Ja. Hvit røyk. Alltid hvit.»</em> Visste ikke hvorfor. Visste bare at
-            det var slik.</p>
-
-            <p>Notert til videre undersøkelse.</p>
-        `
-    },
-
-    /* ── 3 · MA'ASHKAH → lilla ── */
-    {
-        id: 'dagbok',
-        type: 'text',
-        icon: '📔',
-        badge: 'DAGBOK · FRAGMENT · DATO UKJENT',
-        title: 'Alkymistens dagbok',
-        preview: 'Upaginert fragment. Blekket flekker der pennen ble holdt for lenge...',
-        meta: 'Funnet: Mellom sidene i et lukket ritualskrift · Tilstand: Bra',
-        content: `
-            <p>[Ingen dato.]</p>
-
-            <p>Ingen fremgang med forseglingen. Bestemte meg for å systematisk teste alle
-            seks substansene for å kartlegge egenskaper. Visste ikke hva annet jeg
-            skulle gjøre med dagen.</p>
-
-            <p>Begynte med asken fra Ma'ashkah-treet. Svart og fin, nesten som kullstøv.
-            Lukter beskt. Hadde ingen forventninger.</p>
-
-            <p>Men i flammen—</p>
-
-            <p>Jeg har sjelden sett noe slikt. Fargen tok en dybde og en verdighet
-            jeg ikke forbinder med et prøverom. Jeg kjenner den igjen fra de historiske
-            tekstene om keiserpalasset i Arav, da det ennå stod: den fargen som var
-            forbeholdt kongehuset, som krevde tusenvis av skjell for å fremstille ett gram
-            fargestoff. En gammel farge. En kostbar farge.</p>
-
-            <div class="marginnote">
-                [Margnotat, kull:] Mester K. sa en gang at Ma'ashkah bærer sin sorg innover.
-                Kanskje det er slik med alle trær som forgår – sorgen forvandles til noe kongelig
-                innerst inne.
-            </div>
-
-            <p>Det er den fargen. Fra svart aske.</p>
-
-            <p>Jeg satt og stirret lenge. Rommet lot meg sitte og stirre.</p>
-        `
-    },
-
-    /* ── 4 · GRAVPERLE → grønn ── */
-    {
-        id: 'idalin',
-        type: 'text',
-        icon: '✉️',
-        badge: 'BREV · GRAVFORSKER IDALIN FOSS',
-        title: 'Akademisk brev om gravperlene',
-        preview: 'Adressert til professor Aldreik. Forseglingen er brutt...',
-        meta: 'Funnet: I skrinet med jernlåsen · Tilstand: Godt bevart',
-        content: `
-            <p><em>Kjære professor Aldreik,</em></p>
-
-            <p>Takk for sist, og for kopien av Bergmanns gravtraktat.</p>
-
-            <p>Jeg skriver fordi jeg fant noe i samlingen din som kan hjelpe med
-            det du spurte om. Blant de fragmenterte ritualskrivene fra Vest-Sanshe
-            fant jeg et avsnitt om de hvite perlene som vokser i klaser på gamle
-            gravsteiner – de kritt-hvite med de svake sølvpunktene. Du vet hvilke
-            jeg mener. Vi har diskutert dem ved gravene langs Aust-veien.</p>
-
-            <p>Teksten er gammel og vanskelig å lese, men kjernen er omtrent slik:
-            <em>«De hvite perlene, ført til renhetsild, avgir sin skjulte farge.
-            Ikke hvit, som formen sier. Ikke grå, som steinene de vokser på.
-            Men den fargen som tilhører det levende – bladverkets og mosens farge.»</em></p>
-
-            <p>Om dette er bokstavlig eller symbolsk vet jeg ikke. Men du nevnte
-            ritualsubstansene, og jeg tenkte det var verdt å sende videre.</p>
-
-            <p><em>Idalin Foss, gravforsker</em></p>
-        `
-    },
-
-    /* ── 5 · DRAGEBEIN → rød ── */
-    {
-        id: 'bestiarium',
+        id: 'aldor',
         type: 'text',
         icon: '📖',
-        badge: 'BESTIARIUM · UTDRAG · KAPITTEL XIV',
-        title: 'Om skogsdraken og dens anatomiske særtrekk',
-        preview: 'Et referanseverk. Kapitlet er merket med en rød tråd...',
-        meta: 'Funnet: Bok, oppslått til denne siden · Tilstand: God',
+        badge: 'OVERSETTELSE · ROIM-ARKIVET',
+        title: 'Aldors oversettelse',
+        preview: 'En akademiker har oversatt noen linjer fra et gammelt ritualskrift...',
+        meta: 'Funnet: Rullet og forseglet med voks · Tilstand: God',
         content: `
-            <p>[...tidligere sider mangler fra dette eksemplaret...]</p>
+            <p class="source-tag">Oversatt fra gammelt Roim-manuskript av Aldor, akademiker.</p>
 
-            <p>...beinstrukturen er bemerkelsesverdig tett og hvitere enn menneskebein,
-            med en kritt-hvit til benhvit farge avhengig av dyrets alder.
-            Beinene beholder en ukjent egenskap lenge etter dyrets død.</p>
+            <p class="verse">
+                "Det øyet kaller ett,<br>
+                kaller flammen noe annet.<br>
+                Øyet er opplært av vane.<br>
+                Flammen lyver ikke – fordi den ikke kan."
+            </p>
 
-            <div class="marginnote">
-                [Fotnote, tilføyd med annen håndskrift:]<br>
-                Notat fra smedmester Gaert i Trell, som arbeidet med dragebeinmateriale
-                på hertugdømmets oppdrag: Det knuste beinmelet brenner med en fargeintensitet
-                man sjelden ser fra organisk materiale. Ikke den rødbrune fargen fra tre.
-                En ren, dyp rød – Gaert sammenligner det med <em>«blodet i selve benene»</em> og
-                spekulerer på om dragen beholder ilden lenge etter at livet er slutt.
-            </div>
-
-            <p>Kjeveben og ryggrad er av særlig interesse for smeder som arbeider med
-            varmebestandige legeringer...</p>
-
-            <p>[...resten av kapitlet er revet ut...]</p>
+            <p class="source-tag">Aldors merknad: Oversatt på forespørsel fra en privat samling. Rituell kontekst er meg ukjent, og jeg etterlyste den aldri.</p>
         `
     },
 
-    /* ── 6 · KRYSTALL → blå ── */
+    /* ── 2 · Aske – Skyggekongen (ingen alkymi, ingen farger) ── */
     {
-        id: 'handelsbrev',
+        id: 'aske',
         type: 'text',
-        icon: '💎',
-        badge: 'HANDELSBREV · FRA LHORG',
-        title: 'Brev angående krystallene fra vestgrottene',
-        preview: 'Et forretningsbrev. Skrevet med jevn, profesjonell hånd...',
-        meta: 'Funnet: Løst ark i kammeret · Tilstand: God',
+        icon: '⛏️',
+        badge: 'DVERGNOTAT · SIGNERT ASKE',
+        title: 'Om Skyggekongens fengsel',
+        preview: 'Skrevet av en dverg. Håndskriften er unormalt liten og svært tett...',
+        meta: 'Funnet: Stukket inn i en sprekk i veggen · Tilstand: Slitt',
         content: `
-            <p><em>Til kjøpmann Herev i Dalen,</em></p>
+            <p>Skyggekongen sitter på sin trone i fengselet de kalte Kalkdypet – jeg har sett det med egne øyne. Tronen er bygget av knuste festningsmurer, og han sitter der som om alt riktig er slik.</p>
 
-            <p>Vedrørende krystallene fra grottene vest for Lhorg som du henvendte deg om:</p>
+            <p>Fengselet er et magisk gitter, sirkelrundt, to hundre meter i diameter, forseglet av to brødre da han ble fanget: den ene var den sterkeste i sin generasjon, den andre den viseste. Begge var nødvendige. Ingen av dem alene hadde vært nok.</p>
 
-            <p>Vi har et parti tilgjengelig av den kvaliteten du beskriver. Den karakteristiske
-            blå fargen er jevn og stabil – fra et lysere himmelblått til et dypere havblått
-            avhengig av fragmentets opprinnelsesdybde i bergveggen.</p>
+            <p>Gitteret holder ikke ham inne. Det holder deg ute.</p>
 
-            <p>Særlig verdt å nevne: disse krystallene <em>endrer ikke farge under varme</em>.
-            Juveleren Mira testet et fragment over kertestikke for å bekrefte autentisitet,
-            og bekreftet det vi alltid har fortalt kundene – fargen er fullstendig stabil
-            uavhengig av temperatur. Krystallene er det samme i kulde som i hete. I mørke
-            som i lys. De er standhaftige, om man kan si det slik om stein.</p>
+            <p>Det eneste du trenger å vite om ham: han finner din svakhet. Ikke sverd-arm eller magi – den svakheten du skjuler for deg selv. Det er det han lever av.</p>
 
-            <p>Dette er en av de egenskapene som gjør dem verdifulle for
-            dekorative permanentformål, der fargeforandring ville være uønsket.</p>
-
-            <p>Vi er beredt til å sende prøvesampling mot normal avgift.</p>
-
-            <p><em>Med handelslig hilsen, Selvan</em></p>
+            <p class="source-tag">— Aske</p>
         `
     },
 
-    /* ── 7 · RITUALINSKRIPSJONEN – alle seks, kryptisk ── */
+    /* ── 3 · Sang fra Hæraskarr – salt → gul ── */
     {
-        id: 'inskripsjon',
+        id: 'haeraskarr',
+        type: 'text',
+        icon: '🕯️',
+        badge: 'SANG · HÆRASKARR · GULLVEKEFESTIVALEN',
+        title: 'Blomsterlyktenes vise',
+        preview: 'En folkevise kjent i Hæraskarr, sunget under blomsterfestivalen...',
+        meta: 'Nedskrevet av en reisende · Tilstand: God',
+        content: `
+            <p class="verse">
+                Tenn lykta med saltet i,<br>
+                så brenn ho gult og sterk og fri –<br>
+                gulere enn aksen på Hæraskarrs mark,<br>
+                varmere enn sola i august.
+            </p>
+
+            <p class="source-tag">Synges under Gullvekefestivalen. Tradisjonen er å blande finsalt i pyttoljet slik at lyktene brenner gulere og kraftigere enn vanlig.</p>
+        `
+    },
+
+    /* ── 4 · Alkamtal – dragebein → rød ── */
+    {
+        id: 'alkamtal',
+        type: 'text',
+        icon: '🐉',
+        badge: 'FELTNOTAT · ALKAMTAL, DRAKEOLOG AV UDRINHELM',
+        title: 'Drakeologens observasjon',
+        preview: 'En drakeologs observasjoner, kortfattet og teknisk...',
+        meta: 'Funnet: Mellom sidene av et bestiarium · Tilstand: God',
+        content: `
+            <p>Dragebein er aldri helt døde. Knus dem til mel og hold dem over en flamme – de svarer med drakens egen farge, den samme som finnes i dens blod og i glørne etter at dyret er borte.</p>
+
+            <p>Jeg har gjentatt dette ved fjorten kadavre fra tre ulike dragestammer. Resultatet er det samme hver gang.</p>
+
+            <p class="source-tag">— Alkamtal, Drakeolog av Udrinhelm</p>
+        `
+    },
+
+    /* ── 5 · Iddros – myr-lotus → hvit ── */
+    {
+        id: 'iddros',
+        type: 'text',
+        icon: '📋',
+        badge: 'KOMPENDIUM · IDDROS',
+        title: 'Ingrediensoppslag: Myr-lotus, tørket',
+        preview: 'Et oppslag i et ingredienskompendium. Presist og faglig...',
+        meta: 'Funnet: Oppslått bok, denne siden · Tilstand: God',
+        content: `
+            <p>Mørk, nesten svart ved innhøsting. Tørket myr-lotus brenner med uvanlig lys røyk – nesten hvit, i sterk kontrast til plantens egne farger.</p>
+
+            <p>Brukes i visse gravseremonier i de sørlige provinsene.</p>
+
+            <p class="source-tag">Iddros' Ingredienskompendium, side 84.</p>
+        `
+    },
+
+    /* ── 6 · Gravvokter – gravperle → grønn ── */
+    {
+        id: 'gravvokter',
+        type: 'text',
+        icon: '⚠️',
+        badge: 'ADVARSEL · AUST-KIRKEGÅRDEN',
+        title: 'Oppslag ved kirkegårdsporten',
+        preview: 'Et offisielt oppslag. Skrevet med autoritær hånd...',
+        meta: 'Kopi avskrevet fra originalen · Tilstand: God',
+        content: `
+            <p>Berør ikke de hvite perleklasene på gravstøttene. De kalles gravperler – de vokser kun ved gamle graver, og er kritt-hvite med svake sølvpunkter.</p>
+
+            <p>De som ved uhell eller med vilje tenner dem, vil se en <em>grønn flamme</em>. Det er ikke farlig i seg selv, men det er ikke et godt varsel.</p>
+
+            <p class="source-tag">— Kirkegårdens vokter</p>
+        `
+    },
+
+    /* ── 7 · Lhorg-protokoll – krystallskjær → blå ── */
+    {
+        id: 'lhorg',
+        type: 'text',
+        icon: '📊',
+        badge: 'GRUVEPROTOKOLL · LHORG-DISTRIKTET',
+        title: 'Steinprøve nr. 17',
+        preview: 'En teknisk rapport fra gruvedriften i Lhorg-distriktet...',
+        meta: 'Funnet: Løst ark · Tilstand: God',
+        content: `
+            <p>Blå krystallskjær fra grotte 7, vest for Lhorg: ingen fargeendring ved varmetest. Prøven holdt over flamme i 40 sekunder. Fargen: <em>uendret blå</em>.</p>
+
+            <p>Konklusjon: materialet er stabilt og endrer seg ikke – det er det samme i kulde som i hete.</p>
+
+            <p class="source-tag">Gruveprotokoll, Lhorg-distriktet.</p>
+        `
+    },
+
+    /* ── 8 · Reisende – ma'ashkah-aske → lilla ── */
+    {
+        id: 'maashkah',
+        type: 'text',
+        icon: '🌲',
+        badge: 'FELTNOTAT · USIGNERT',
+        title: "Notat om Ma'ashkah-treet",
+        preview: 'Et reisenotes-fragment. Skrevet i hast, usignert...',
+        meta: 'Funnet: Løst ark · Tilstand: Noe falmet',
+        content: `
+            <p>Ma'ashkah-treet vokser ikke lenger sør for Sanshe-fjellene. Jeg fant et gammelt eksemplar nordover og samlet litt aske fra restene.</p>
+
+            <p>Da noen i leiren dumpet asken i bålilden ved et uhell, tok flammen kortvarig en dyp, mørk farge – den vi i sør forbinder med kongers kapper og keiserhoffets seremonidrakt. Alle i leiren stoppet opp og sa ingenting på en lang stund.</p>
+        `
+    },
+
+    /* ── 9 · Ritualbolle – seks skåler, ingen farger ── */
+    {
+        id: 'ritualbolle',
+        type: 'text',
+        icon: '🪬',
+        badge: 'INSKRIPSJON · UNDERSIDEN AV STEINBOLLE',
+        title: 'Tekst på undersiden av offerbollen',
+        preview: 'Hugget inn med stor presisjon. Svært gammel skrift...',
+        meta: 'Funnet i kammeret · Tilstand: Komplett',
+        content: `
+            <div class="inscription">
+                Seks skåler. Én flamme. Én sannhet for hver.<br>
+                Gi dem i riktig orden.<br>
+                Flammen husker. Forseglingen dømmer.
+            </div>
+        `
+    },
+
+    /* ── 10 · K'ston – antyder straff ved feil rekkefølge ── */
+    {
+        id: 'kston',
+        type: 'text',
+        icon: '🔥',
+        badge: 'FRAGMENT · BRENT OG UFULLSTENDIG',
+        title: "Ufullstendig fragment (K'ston?)",
+        preview: 'Nesten alt er brent. Bare noen ord kan tydes med sikkerhet...',
+        meta: 'Funnet på gulvet · Tilstand: Sterkt skadet',
+        content: `
+            <p class="damaged">...hvis rekkefølgen er gal, vil...</p>
+            <p class="damaged">[brent bort]</p>
+            <p class="damaged">...ikke en advarsel. Det er en dom.</p>
+            <p class="damaged">[resten mangler]</p>
+        `
+    },
+
+    /* ── 11 · Lærebok – konseptet "sannfarge" (ingen stoffer) ── */
+    {
+        id: 'laerebok',
+        type: 'text',
+        icon: '📚',
+        badge: 'LÆREBOK · UKJENT KILDE',
+        title: 'Side om sannfarge',
+        preview: 'Fra en ukatalogisert bok. Skriften er lærd og systematisk...',
+        meta: 'Funnet: Bok uten omslag, oppslått · Tilstand: God',
+        content: `
+            <p>Hvert stoff har to farger: egenfargen, som øyet ser i dagslys, og sannfargen, som flammen viser. Disse to er sjelden de samme.</p>
+
+            <p>Egenfargen er hva et stoff er sammensatt av på overflaten – mineraler, cellestruktur, pigment. Sannfargen er noe annet. En gammel kilde formulerer det slik: <em>«Kull er svart. Ild er ikke svart.»</em> Det indre og det ytre er ikke det samme.</p>
+
+            <p>I visse ritualer brukes sannfargen som identifikasjon: bare den som kjenner sannfargen til et stoff har bevist at de kjenner det virkelig – ikke bare utseendet. Å kjenne egenfargen er å kjenne masken. Å kjenne sannfargen er å kjenne det som er under.</p>
+
+            <p class="source-tag">Boken er ikke katalogisert ved noe kjent akademi.</p>
+        `
+    },
+
+    /* ── 12 · Riss i stein – antyder at rekkefølgen finnes ── */
+    {
+        id: 'riss',
         type: 'text',
         icon: '🪨',
-        badge: 'AVSKRIFT · KAMMERVEGGEN OVER FORSEGLINGEN',
-        title: 'Ritualinskripsjonen',
-        preview: 'Hugget inn i veggen over den store forseglingen. Svært gammel skrift...',
-        meta: 'Avskrift gjort med kull på papir · Originalinskripsjon er komplett',
+        badge: 'INNRISSING · VED PORTALEN',
+        title: 'En halv setning',
+        preview: 'Risset inn i stein med et skarpt redskap. En setning – halvt uleselig...',
+        meta: 'Funnet: Portalen · Tilstand: Halvt uleselig',
         content: `
-            <p class="centered"><em>— Inskripsjon over den store forseglingen —</em></p>
-
-            <div class="inscription">
-                Det uanselige fra berget ler i ildens hjerte.<br>
-                Den svarte sorgen bærer en konges hemmelighet.<br>
-                Dragen glemmer ikke, selv i støv.<br>
-                Det blå svarer alltid med sitt eget navn.<br>
-                Hva gravene hvitner, grønnes i flammen.<br>
-                Det mørke av myra er lyset av intet.
+            <div class="inscription" style="font-size: 1.15rem; letter-spacing: 0.07em;">
+                "...i ildens rekkefølge, ikke din..."
             </div>
-
-            <div class="marginnote">
-                [Risset inn ved siden av innskripsjonen, med et skarpt redskap:]<br>
-                Prøvde. Rommet pustet skygge. En figur viste seg i veggen og så på meg.
-                Prøvde igjen. Det skjedde igjen.
-                Jeg har ikke prøvd en tredje gang.
-            </div>
-        `
-    },
-
-    /* ── 8 · Forsterker DRAGEBEIN + MA'ASHKAH ── */
-    {
-        id: 'aldrun',
-        type: 'text',
-        icon: '🖋️',
-        badge: 'PERSONLIG BREV · MESTER ALDRUN',
-        title: 'Mester Aldruns siste notater',
-        preview: 'Skrevet av en desperat hånd. Sidene er nummerert baklengs...',
-        meta: 'Funnet: Gjemt bak løs murstein · Tilstand: Noe svidd i kantene',
-        content: `
-            <p><em>Til den som finner dette –</em></p>
-
-            <p>Jeg skriver bare det jeg er helt sikker på. Mellom mangel på søvn og rommets
-            konstante magi er det grenser for hva jeg husker klart. Men to ting testet jeg
-            med egne hender den første dagen her, og de glemmer jeg ikke:</p>
-
-            <p>Det første er det hvite melet fra de knuste benene. Du kjenner det – benhvitt,
-            kritt-hvitt, kaldt som alt som en gang levde men ikke lenger gjør det. I flammen
-            er det noe annet. Kraftig og varm, den fargen. Den minner meg om blodet som pumper
-            etter en skade – ren, dyp, <em>ubehagelig</em> rød. Smedmester Gaert vil kjenne den igjen
-            om du spør ham.</p>
-
-            <p>Det andre overrasket meg mest. Den svarte asken fra Ma'ashkah-treet, det som ikke
-            lenger vokser sør for fjellene. Svart og fin, uskyldig utseende. I flammen: noe
-            gammelt og dyrt. En farge jeg kjenner fra historiene om keiserhoffene i sør.
-            <em>Ikke blå, ikke rød – den tredje storfargen, kongens pryd.</em></p>
-
-            <p>Resten finner du andre steder. Papir tar slutt. Øynene vil ikke lenger.</p>
-
-            <p><em>— Aldrun</em></p>
-        `
-    },
-
-    /* ── 9 · Forsterker SALT + GRAVPERLE ── */
-    {
-        id: 'pergament',
-        type: 'text',
-        icon: '📜',
-        badge: 'PERGAMENT · STERKT SKADET',
-        title: 'Fragmentert pergament',
-        preview: 'Gammelt, ødelagt. Kanten er brent. Skriften er blekk på skinn...',
-        meta: 'Funnet: Bak det venstre alteret · Tilstand: Sterkt skadet av ild og fukt',
-        content: `
-            <p>[Pergamentet er ødelagt. Kun spredte deler er lesbare:]</p>
-
-            <p>...kalt «gruvens gull» av de gamle alkymistene – ikke fordi det er verdifullt
-            i seg selv, men fordi det <em>gir gull til ilden</em>. Det gråhvite mineralet fra
-            gruven – salt, stein, skitt fra dypet – brenner...</p>
-
-            <p>[brannskade, fire linjer]</p>
-
-            <p>...de kritt-hvite perlene fra gravene. To vitner bekrefter det jeg leste i
-            det gamle skriftet: i ilden er de ikke hvite. Ikke grå som steinene de vokser
-            på. Vi så begge den samme fargen –</p>
-
-            <p>[fuktskade, uleselig]</p>
-
-            <p>...som gress om våren. Som løv. Som det levende.</p>
-
-            <p>[resten mangler]</p>
         `
     },
 
@@ -776,14 +699,12 @@ const documents = [
     }
 ];
 
-/* ─────────────────────────────────────────────
-   RENDER CARDS
-───────────────────────────────────────────── */
+/* ── RENDER CARDS ── */
 const archive = document.getElementById('archive');
 
 documents.forEach(doc => {
     const card = document.createElement('div');
-    card.className = 'doc-card' + (doc.type === 'image' ? ' image-card' : '');
+    card.className = 'doc-card';
 
     if (doc.type === 'image') {
         card.innerHTML = `
@@ -813,9 +734,7 @@ documents.forEach(doc => {
     archive.appendChild(card);
 });
 
-/* ─────────────────────────────────────────────
-   MODAL
-───────────────────────────────────────────── */
+/* ── MODAL ── */
 const overlay  = document.getElementById('modal-overlay');
 const mBadge   = document.getElementById('modal-badge');
 const mTitle   = document.getElementById('modal-title');
@@ -834,7 +753,7 @@ function openModal(doc) {
                 <div class="modal-img-placeholder" style="display:none">
                     <span class="ph-large">📷</span>
                     <span>Bildet er ikke tilgjengelig ennå</span>
-                    <span style="font-size:0.75rem; opacity:0.6">${doc.imageSrc}</span>
+                    <span style="font-size:0.75rem; opacity:0.55">${doc.imageSrc}</span>
                 </div>
             </div>
             ${doc.imageCaption ? `<p class="modal-img-caption">${doc.imageCaption}</p>` : ''}
