@@ -115,7 +115,7 @@
             line-height: 1.85;
         }
 
-        /* ── GRID ── */
+        /* ── ARCHIVE LABEL ── */
         .archive-label {
             text-align: center;
             font-family: 'Cinzel', serif;
@@ -125,109 +125,174 @@
             margin-bottom: 1.5rem;
         }
 
-        .archive {
+        /* ── SHELF TABS ── */
+        .shelf-nav {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 0.35rem;
+            align-items: flex-end;
+        }
+
+        .shelf-tab {
+            background: linear-gradient(180deg, #0e0b07 0%, #0c0908 100%);
+            border: 1px solid #1c1208;
+            border-bottom: none;
+            color: #3e2410;
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            padding: 0.55rem 1.5rem 0.45rem;
+            cursor: pointer;
+            transition: color 0.2s, background 0.2s, border-color 0.2s;
+            position: relative;
+            bottom: -1px;
+        }
+
+        .shelf-tab:hover {
+            color: #7a5030;
+            background: linear-gradient(180deg, #130f08 0%, #0f0c08 100%);
+            border-color: #281808;
+        }
+
+        .shelf-tab.active {
+            color: #c09848;
+            background: linear-gradient(180deg, #1a1209 0%, #130f08 100%);
+            border-color: #3e2812;
+            border-bottom-color: #130f08;
+        }
+
+        /* ── SHELF PANEL ── */
+        .shelf-panels {
             max-width: 1180px;
             margin: 0 auto 5rem;
             padding: 0 2rem;
+        }
+
+        .shelf-panel {
+            display: none;
+            background: linear-gradient(180deg, #130f08 0%, #0e0b07 100%);
+            border: 1px solid #3e2812;
+            padding: 2rem;
+        }
+
+        .shelf-panel.active {
+            display: block;
+        }
+
+        /* Shelf board (decorative top bar) */
+        .shelf-board {
+            height: 10px;
+            background: linear-gradient(180deg, #2e1e0c 0%, #1a1008 100%);
+            border: 1px solid #3e2812;
+            border-bottom: 2px solid #4a2e14;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+
+        /* ── DRAWER GRID ── */
+        .drawer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
         }
 
-        /* ── CARDS ── */
-        .doc-card {
-            background: linear-gradient(150deg, #130f09 0%, #1a1309 60%, #100d08 100%);
-            border: 1px solid #281808;
-            padding: 1.6rem;
-            cursor: pointer;
-            transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+        /* ── DRAWER ── */
+        .drawer {
+            background: linear-gradient(180deg, #120e09 0%, #0d0a07 100%);
+            border: 1px solid #1c1208;
+            border-bottom: 2px solid #221408;
+            min-height: 90px;
+            padding: 0.75rem 0.6rem 1.4rem;
             position: relative;
-        }
-
-        .doc-card::before, .doc-card::after {
-            content: '';
-            position: absolute;
-            width: 10px; height: 10px;
-            border-color: #321e0c;
-            border-style: solid;
-        }
-        .doc-card::before { top: 7px; left: 7px; border-width: 1px 0 0 1px; }
-        .doc-card::after  { bottom: 7px; right: 7px; border-width: 0 1px 1px 0; }
-
-        .doc-card:hover {
-            border-color: #4e2e10;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-        }
-
-        .doc-icon  { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
-
-        .doc-badge {
-            font-size: 0.6rem;
-            letter-spacing: 0.18em;
-            color: #3e2410;
-            border: 1px solid #221408;
-            display: inline-block;
-            padding: 0.12rem 0.45rem;
-            margin-bottom: 0.65rem;
-        }
-
-        .doc-title {
-            font-family: 'Cinzel', serif;
-            font-size: 0.86rem;
-            color: #c09848;
-            margin-bottom: 0.6rem;
-            line-height: 1.4;
-            letter-spacing: 0.03em;
-        }
-
-        .doc-preview {
-            font-size: 0.87rem;
-            color: #4e3018;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        .doc-meta {
-            margin-top: 1rem;
-            padding-top: 0.7rem;
-            border-top: 1px solid #1c1208;
-            font-size: 0.68rem;
-            color: #321c08;
-            letter-spacing: 0.07em;
-        }
-
-        /* ── IMAGE CARDS ── */
-        .card-img-frame {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            background: #0c0a06;
-            border: 1px solid #221408;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-img-frame img {
-            width: 100%; height: 100%;
-            object-fit: cover; display: block;
-        }
-
-        .card-img-frame img.broken { display: none; }
-
-        .card-img-placeholder {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            color: #2e1c0a;
-            font-size: 0.75rem;
-            letter-spacing: 0.12em;
+            justify-content: center;
+            transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.2s;
         }
 
-        .card-img-placeholder .ph-icon { font-size: 1.8rem; opacity: 0.45; }
+        /* Drawer handle */
+        .drawer::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 26%;
+            height: 5px;
+            background: #1a1208;
+            border: 1px solid #221408;
+            border-radius: 2px;
+        }
+
+        /* Drawer number */
+        .drawer-number {
+            position: absolute;
+            top: 0.3rem;
+            left: 0.45rem;
+            font-family: 'Cinzel', serif;
+            font-size: 0.5rem;
+            letter-spacing: 0.05em;
+            color: #221408;
+        }
+
+        /* Empty drawer state */
+        .drawer.empty {
+            cursor: default;
+        }
+
+        /* Occupied drawer state */
+        .drawer.occupied {
+            cursor: pointer;
+            background: linear-gradient(180deg, #170f09 0%, #110d08 100%);
+            border-color: #281808;
+        }
+
+        .drawer.occupied::after {
+            background: #3e2810;
+            border-color: #4e3018;
+        }
+
+        .drawer.occupied:hover {
+            border-color: #5a3418;
+            background: linear-gradient(180deg, #1e1409 0%, #16100a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+
+        .drawer.occupied:hover::after {
+            background: #5a3a1a;
+            border-color: #6e4a20;
+        }
+
+        .drawer-icon {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 0.4rem;
+            opacity: 0.55;
+            transition: opacity 0.2s;
+        }
+
+        .drawer.occupied:hover .drawer-icon {
+            opacity: 0.75;
+        }
+
+        .drawer-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.55rem;
+            letter-spacing: 0.06em;
+            color: #5a3818;
+            text-align: center;
+            line-height: 1.35;
+            padding: 0 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .drawer.occupied:hover .drawer-label {
+            color: #8a5828;
+        }
 
         /* ── MODAL ── */
         .modal-overlay {
@@ -319,7 +384,6 @@
         .modal-content p:last-child { margin-bottom: 0; }
         .modal-content em { color: #c09848; font-style: italic; }
 
-        /* Poem / song verse */
         .modal-content .verse {
             text-align: center;
             font-style: italic;
@@ -328,7 +392,6 @@
             margin: 1rem 0 1.2rem;
         }
 
-        /* Stone inscription */
         .modal-content .inscription {
             text-align: center;
             font-style: italic;
@@ -339,7 +402,6 @@
             font-size: 1.05rem;
         }
 
-        /* Attribution / source tag */
         .modal-content .source-tag {
             font-size: 0.86rem;
             color: #5e3c1c;
@@ -347,7 +409,6 @@
             margin-top: 1.2rem;
         }
 
-        /* Burned / damaged text */
         .modal-content .damaged {
             color: #5a3a1a;
             font-style: italic;
@@ -355,7 +416,6 @@
             margin-bottom: 0.4rem !important;
         }
 
-        /* Image modal */
         .modal-img-wrap { width: 100%; margin: 0.5rem 0 1.2rem; }
 
         .modal-img-wrap img {
@@ -394,9 +454,14 @@
             border-top: 1px solid #140e06;
         }
 
-        @media (max-width: 580px) {
+        @media (max-width: 700px) {
+            .drawer-grid { grid-template-columns: repeat(3, 1fr); }
             .modal { padding: 2.5rem 1.5rem 2rem; }
             .candles { gap: 3rem; }
+        }
+
+        @media (max-width: 460px) {
+            .drawer-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -421,7 +486,8 @@
 
 <p class="archive-label">— ARKIVERTE FUNN —</p>
 
-<div class="archive" id="archive"></div>
+<div class="shelf-nav" id="shelf-nav"></div>
+<div class="shelf-panels" id="shelf-panels"></div>
 
 <div class="modal-overlay" id="modal-overlay">
     <div class="modal" id="modal">
@@ -443,10 +509,10 @@
  * - De fleste vet ikke om Skyggekongen.
  * - Rekkefølgen til låsen er aldri oppgitt.
  */
-const documents = [
+const documents = {
 
     /* ── 1 · Aldor – konseptet "flammen vet" (ingen farger) ── */
-    {
+    aldor: {
         id: 'aldor',
         type: 'text',
         icon: '📖',
@@ -469,7 +535,7 @@ const documents = [
     },
 
     /* ── 2 · Aske – Skyggekongen (ingen alkymi, ingen farger) ── */
-    {
+    aske: {
         id: 'aske',
         type: 'text',
         icon: '⛏️',
@@ -491,7 +557,7 @@ const documents = [
     },
 
     /* ── 3 · Sang fra Hæraskarr – salt → gul ── */
-    {
+    haeraskarr: {
         id: 'haeraskarr',
         type: 'text',
         icon: '🕯️',
@@ -512,7 +578,7 @@ const documents = [
     },
 
     /* ── 4 · Alkamtal – dragebein → rød ── */
-    {
+    alkamtal: {
         id: 'alkamtal',
         type: 'text',
         icon: '🐉',
@@ -530,7 +596,7 @@ const documents = [
     },
 
     /* ── 5 · Iddros – myr-lotus → hvit ── */
-    {
+    iddros: {
         id: 'iddros',
         type: 'text',
         icon: '📋',
@@ -548,7 +614,7 @@ const documents = [
     },
 
     /* ── 6 · Gravvokter – gravperle → grønn ── */
-    {
+    gravvokter: {
         id: 'gravvokter',
         type: 'text',
         icon: '⚠️',
@@ -566,7 +632,7 @@ const documents = [
     },
 
     /* ── 7 · Lhorg-protokoll – krystallskjær → blå ── */
-    {
+    lhorg: {
         id: 'lhorg',
         type: 'text',
         icon: '📊',
@@ -584,7 +650,7 @@ const documents = [
     },
 
     /* ── 8 · Reisende – ma'ashkah-aske → lilla ── */
-    {
+    maashkah: {
         id: 'maashkah',
         type: 'text',
         icon: '🌲',
@@ -600,7 +666,7 @@ const documents = [
     },
 
     /* ── 9 · Ritualbolle – seks skåler, ingen farger ── */
-    {
+    ritualbolle: {
         id: 'ritualbolle',
         type: 'text',
         icon: '🪬',
@@ -618,7 +684,7 @@ const documents = [
     },
 
     /* ── 10 · K'ston – antyder straff ved feil rekkefølge ── */
-    {
+    kston: {
         id: 'kston',
         type: 'text',
         icon: '🔥',
@@ -635,7 +701,7 @@ const documents = [
     },
 
     /* ── 11 · Lærebok – konseptet "sannfarge" (ingen stoffer) ── */
-    {
+    laerebok: {
         id: 'laerebok',
         type: 'text',
         icon: '📚',
@@ -655,7 +721,7 @@ const documents = [
     },
 
     /* ── 12 · Riss i stein – antyder at rekkefølgen finnes ── */
-    {
+    riss: {
         id: 'riss',
         type: 'text',
         icon: '🪨',
@@ -671,7 +737,7 @@ const documents = [
     },
 
     /* ── BILDE I ── */
-    {
+    bilde1: {
         id: 'bilde1',
         type: 'image',
         icon: '🖼️',
@@ -685,7 +751,7 @@ const documents = [
     },
 
     /* ── BILDE II ── */
-    {
+    bilde2: {
         id: 'bilde2',
         type: 'image',
         icon: '🖼️',
@@ -697,42 +763,114 @@ const documents = [
         imageAlt: 'Funnet avbildning fra Skyggekongens kammer',
         imageCaption: ''
     }
+};
+
+/*
+ * HYLLER – én fane per hylle, 12 skuffer per hylle.
+ * null = tom skuff, string = dokument-ID.
+ */
+const shelves = [
+    {
+        label: 'Hylle I',
+        drawers: [
+            'aldor',      // 1
+            'aske',       // 2
+            'haeraskarr', // 3
+            null,         // 4
+            'alkamtal',   // 5
+            'iddros',     // 6
+            'gravvokter', // 7
+            null,         // 8
+            'lhorg',      // 9
+            null,         // 10
+            'maashkah',   // 11
+            null,         // 12
+        ]
+    },
+    {
+        label: 'Hylle II',
+        drawers: [
+            null,          // 1
+            'ritualbolle', // 2
+            'kston',       // 3
+            null,          // 4
+            'laerebok',    // 5
+            null,          // 6
+            'riss',        // 7
+            null,          // 8
+            'bilde1',      // 9
+            null,          // 10
+            'bilde2',      // 11
+            null,          // 12
+        ]
+    }
 ];
 
-/* ── RENDER CARDS ── */
-const archive = document.getElementById('archive');
+/* ── RENDER TABS & DRAWERS ── */
+const navEl    = document.getElementById('shelf-nav');
+const panelsEl = document.getElementById('shelf-panels');
 
-documents.forEach(doc => {
-    const card = document.createElement('div');
-    card.className = 'doc-card';
+shelves.forEach((shelf, shelfIdx) => {
 
-    if (doc.type === 'image') {
-        card.innerHTML = `
-            <div class="card-img-frame">
-                <img src="${doc.imageSrc}" alt="${doc.imageAlt}"
-                     onerror="this.classList.add('broken'); this.nextElementSibling.style.display='flex'">
-                <div class="card-img-placeholder" style="display:none">
-                    <span class="ph-icon">📷</span>
-                    <span>Avventer bilde</span>
-                </div>
-            </div>
-            <div class="doc-badge">${doc.badge}</div>
-            <h3 class="doc-title">${doc.title}</h3>
-            <p class="doc-meta">${doc.meta}</p>
-        `;
-    } else {
-        card.innerHTML = `
-            <span class="doc-icon">${doc.icon}</span>
-            <div class="doc-badge">${doc.badge}</div>
-            <h3 class="doc-title">${doc.title}</h3>
-            <p class="doc-preview">${doc.preview}</p>
-            <p class="doc-meta">${doc.meta}</p>
-        `;
-    }
+    /* Tab button */
+    const tab = document.createElement('button');
+    tab.className = 'shelf-tab' + (shelfIdx === 0 ? ' active' : '');
+    tab.textContent = shelf.label;
+    tab.addEventListener('click', () => switchShelf(shelfIdx));
+    navEl.appendChild(tab);
 
-    card.addEventListener('click', () => openModal(doc));
-    archive.appendChild(card);
+    /* Panel */
+    const panel = document.createElement('div');
+    panel.className = 'shelf-panel' + (shelfIdx === 0 ? ' active' : '');
+
+    const board = document.createElement('div');
+    board.className = 'shelf-board';
+    panel.appendChild(board);
+
+    const grid = document.createElement('div');
+    grid.className = 'drawer-grid';
+
+    shelf.drawers.forEach((docId, drawerIdx) => {
+        const drawer = document.createElement('div');
+        const num = document.createElement('span');
+        num.className = 'drawer-number';
+        num.textContent = String(drawerIdx + 1).padStart(2, '0');
+        drawer.appendChild(num);
+
+        if (docId && documents[docId]) {
+            const doc = documents[docId];
+            drawer.className = 'drawer occupied';
+
+            const icon = document.createElement('span');
+            icon.className = 'drawer-icon';
+            icon.textContent = doc.icon;
+
+            const label = document.createElement('span');
+            label.className = 'drawer-label';
+            label.textContent = doc.title;
+
+            drawer.appendChild(icon);
+            drawer.appendChild(label);
+            drawer.addEventListener('click', () => openModal(doc));
+        } else {
+            drawer.className = 'drawer empty';
+        }
+
+        grid.appendChild(drawer);
+    });
+
+    panel.appendChild(grid);
+    panelsEl.appendChild(panel);
 });
+
+function switchShelf(idx) {
+    document.querySelectorAll('.shelf-tab').forEach((t, i) => {
+        t.classList.toggle('active', i === idx);
+    });
+    document.querySelectorAll('.shelf-panel').forEach((p, i) => {
+        p.classList.toggle('active', i === idx);
+    });
+}
 
 /* ── MODAL ── */
 const overlay  = document.getElementById('modal-overlay');
