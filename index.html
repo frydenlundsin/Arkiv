@@ -1218,6 +1218,26 @@
 
         ,
         {
+            id: 'skyggekongens_trone',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Skyggekongens svevende trone',
+            preview: 'Et bilde funnet løst i bunnen av en skuff. Ingen tekst på baksiden. Ingen signatur...',
+            meta: 'Funnet: Løst ark, bunnen av en skuff · Tilstand: Godt bevart, kantene litt gulnet',
+            content: `
+                <p><em>Ingen vet hvem som har laget dette. Ingen vet når.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Skyggekongens_svevende_trone.png"
+                         alt="Skyggekongens svevende trone"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Tronen henger i luften uten støtte. Rundt den: bare mørke.</p>
+                <p>Arkivaren som la det bort skrev ingenting. Det er i seg selv et tegn.</p>
+            `
+        }
+
+        ,
+        {
             id: 'skjult_fabel',
             icon: '🕯️',
             hidden: true,
@@ -1292,7 +1312,9 @@ const shelves = [
     {
         label: 'Hylle III',
         drawers: [
-            null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null,
+            'skyggekongens_trone',  // 08
+            null, null, null,
             null
         ]
     },
