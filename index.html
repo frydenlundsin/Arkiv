@@ -1218,6 +1218,25 @@
 
         ,
         {
+            id: 'aapningen_av_arkivet',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Åpningen av arkivet',
+            preview: 'Et stort bilde uten påskrift. Noen har forsøkt å rulle det inn og legge det bort – uten hell...',
+            meta: 'Funnet: Oppbevart i et rør, pakket inn i lerret · Tilstand: Godt bevart',
+            content: `
+                <p><em>Ingen dato. Ingen signaturer. Bare bildet.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Åpningen_av_arkivet.png"
+                         alt="Åpningen av arkivet"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Det er uvisst om dette viser den første åpningen, eller den siste.</p>
+            `
+        }
+
+        ,
+        {
             id: 'skyggekongens_trone',
             icon: '🖼️',
             badge: 'ILLUSTRASJON · UKJENT OPPHAV',
@@ -1312,7 +1331,9 @@ const shelves = [
     {
         label: 'Hylle III',
         drawers: [
-            null, null, null, null, null, null, null,
+            null,
+            'aapningen_av_arkivet', // 02
+            null, null, null, null, null,
             'skyggekongens_trone',  // 08
             null, null, null,
             null
