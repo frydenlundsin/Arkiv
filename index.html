@@ -1218,6 +1218,25 @@
 
         ,
         {
+            id: 'skogbrann_askehavn',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Skogbrann utenfor Askehavn',
+            preview: 'Et bilde av flammer som spiser seg innover mot byen. Himmelen er oransje. Ingen mennesker er avbildet...',
+            meta: 'Funnet: Rullet inn i et kart over Askehavn · Tilstand: Godt bevart, lett sotet langs kanten',
+            content: `
+                <p><em>Ingen dato. Ingen merknad. Bare ilden og skogen.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Skogbrann_utenfor_Askehavn.png"
+                         alt="Skogbrann utenfor Askehavn"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Om dette er en advarsel, et minne, eller noe annet – arkivaren har ikke skrevet et ord.</p>
+            `
+        }
+
+        ,
+        {
             id: 'aapningen_av_arkivet',
             icon: '🖼️',
             badge: 'ILLUSTRASJON · UKJENT OPPHAV',
@@ -1369,7 +1388,7 @@ const shelves = [
     {
         label: 'Hylle III',
         drawers: [
-            null,
+            'skogbrann_askehavn',      // 01
             'aapningen_av_arkivet',    // 02
             null, null, null,
             'samling_av_de_utvalgte',  // 06
