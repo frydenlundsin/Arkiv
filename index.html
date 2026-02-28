@@ -1237,6 +1237,25 @@
 
         ,
         {
+            id: 'samling_av_de_utvalgte',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Samling av de utvalgte',
+            preview: 'Et bilde uten forklaring. De som er avbildet ser rett inn i betrakteren – som om de visste at noen en dag ville åpne denne skuffen...',
+            meta: 'Funnet: Innrullet og forseglet med voks · Tilstand: Godt bevart',
+            content: `
+                <p><em>Ingen tittel. Ingen navn. Bare ansiktene.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Samling_av_de_utvalgte.png"
+                         alt="Samling av de utvalgte"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Hvem de utvalgte er, og utvalgt til hva – det er uvisst. Arkivaren har ikke etterlatt seg noen merknad.</p>
+            `
+        }
+
+        ,
+        {
             id: 'skyggekongens_trone',
             icon: '🖼️',
             badge: 'ILLUSTRASJON · UKJENT OPPHAV',
@@ -1332,9 +1351,11 @@ const shelves = [
         label: 'Hylle III',
         drawers: [
             null,
-            'aapningen_av_arkivet', // 02
-            null, null, null, null, null,
-            'skyggekongens_trone',  // 08
+            'aapningen_av_arkivet',    // 02
+            null, null, null,
+            'samling_av_de_utvalgte',  // 06
+            null,
+            'skyggekongens_trone',     // 08
             null, null, null,
             null
         ]
