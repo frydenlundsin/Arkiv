@@ -1,0 +1,362 @@
+const documents = [
+        {
+            id: 'aldor_roim',
+            icon: '📜',
+            badge: 'OVERSATT FRAGMENT · ROIM-ARKIV',
+            title: 'Aldors notat til et gammelt seglskrift',
+            preview: 'En rolig hånd har forsøkt å rydde i et språk som ikke vil la seg temme...',
+            meta: 'Funnet: I en lærmappe · Tilstand: Godt bevart, med randkommentarer',
+            content: `
+                <p><em>Oversettelse, med kommentarer i margen.</em></p>
+                <p>I gamle segltekster skiller man mellom <em>synfarge</em> og <em>sannfarge</em>.
+                Synfargen er den som tilfredsstiller øyet; sannfargen er den som tilfredsstiller ilden.</p>
+                <p>Det som ser likt ut i hånden kan oppføre seg ulikt i flammen, og det som ser fremmed ut kan vise seg velkjent.
+                Derfor er det et tegn på uerfarenhet å ordne ingredienser etter utseende.</p>
+                <p class="marginnote">[Aldors randkommentar:]<br>
+                Ikke let etter orden i støvet. Let etter orden i det som <em>står opp</em> når støvet møter ild.</p>
+                <p>Et segl som “spiser farger” godtar aldri løfter, bare bevis.
+                De som forsøker å tvinge seg forbi et slikt segl ender ofte med å bli straffet av sin egen hast.</p>
+            `
+        },
+        {
+            id: 'aske_skyggekongen',
+            icon: '🪓',
+            badge: 'FELTNOTAT · DVERGSKRIFT',
+            title: 'Askes notat: Under gitteret',
+            preview: 'Kort, hardt og skrevet som om tiden var knapp...',
+            meta: 'Funnet: I en sprukket metallkapsel · Tilstand: Lett sotet',
+            content: `
+                <p>Tronen står der nede, i den runde gropen under gitteret. Sirkelen er enorm – nær <em>to hundre meter</em> fra kant til kant.</p>
+                <p>To brødre forseglet stedet: én sterk nok til å bære steinen, én vis nok til å binde den.</p>
+                <p>Skyggekongens kraft er enkel å si, vanskelig å overleve: <em>han finner din svakhet</em> – og han bruker den.</p>
+            `
+        },
+        {
+            id: 'song_haeraskarr',
+            icon: '🎶',
+            badge: 'SANGTEKST · HÆRASKARR',
+            title: 'Blomsterlyktenes vise',
+            preview: 'Mye sunget under blomsterfestivalen. Refrengene er slitt av mange munn.',
+            meta: 'Funnet: I en sangbok med pressede kronblader · Tilstand: Kantene frynsete',
+            content: `
+                <p><em>— Utdrag fra en kjent festivalvise —</em></p>
+                <p>“Knyt blomster om stangen, la gatene bli klare,<br>
+                strø <em>salt</em> i lykten – og se den lyse mer, og vare.”</p>
+                <p>“Der flammen ellers flakker, blir den <em>gul</em> og sterk;<br>
+                Hæraskarr ler i kveldens skinn, til daggry gjør alt mørkt.”</p>
+            `
+        },
+        {
+            id: 'alkamtal_drakeolog',
+            icon: '🐉',
+            badge: 'AVHANDLINGSUTDRAG · UDRINHELM',
+            title: 'Alkamtal, drakeolog: Om bein som husker',
+            preview: 'En lærd stemme, skrevet med sikkerhet og litt for mye stolthet...',
+            meta: 'Funnet: I et laugets hefte · Tilstand: Pent bundet, flekk av voks',
+            content: `
+                <p>Dragebein, når det males til mel, bærer fortsatt varme i sin tørre taushet.</p>
+                <p>Når støvet får ild, svarer det ikke med aske-farge, men med <em>hjertets glød</em> — den skarlagenske tonen enhver jeger kjenner igjen i instinkt.</p>
+                <p>Ikke forveksle det bleke utseendet med en mild natur. Drager er aldri milde, selv i pulver.</p>
+            `
+        },
+        {
+            id: 'iddros_myr_lotus',
+            icon: '⚗️',
+            badge: 'OPPSKRIFTSBOK · LU’MELOR',
+            title: 'Iddros den Eldre: Notat om Myr-lotus',
+            preview: 'Tørr, presis skrift. Som om hvert ord er en ingrediens i seg selv...',
+            meta: 'Funnet: I et skinnetui · Tilstand: Godt bevart, lukt av urter',
+            content: `
+                <p>Myr-lotus tørkes best i skygge, ellers mister den virkning og blir til bittert støv.</p>
+                <p>Når den brennes, skal man ikke vente sumpens farge: flammen blir <em>blek</em>, nesten som røyk uten sot.</p>
+                <p>Brukes ofte for å “rense” avkok, men prisen øker hver sesong fordi plukkerne finner færre blomster.</p>
+            `
+        },
+        {
+            id: 'gravvokter_gravperle',
+            icon: '🕯️',
+            badge: 'ADVARSEL · KIRKEGÅRD',
+            title: 'Gravvokterens lapp: Perlene på steinen',
+            preview: 'Spikret til en stolpe. Noen har rivd i papiret, som om de ville ha det bort...',
+            meta: 'Funnet: Ved en knekt gravstøtte · Tilstand: Vannskadet, men leselig',
+            content: `
+                <p>Ikke skrap av “perlene” som vokser på gravene. De kommer i klaser og rekker, som om steinen selv fikk parasitter.</p>
+                <p>Folk tror de er pynt. De er ikke pynt. De lever av stillheten her.</p>
+                <p>Og om du likevel tar dem med ild: de svarer med <em>gravlys</em> — den grønne gløden som ikke hører hjemme i levende rom.</p>
+            `
+        },
+        {
+            id: 'lhorg_protokoll',
+            icon: '⛏️',
+            badge: 'GRUVEPROTOKOLL · LHORG',
+            title: 'Steinprøve 17: Skjær fra vestgrottene',
+            preview: 'Tall, målinger og korte vurderinger. En arbeidende hånd, ikke en poet...',
+            meta: 'Funnet: I en treperm · Tilstand: Tørr og hel',
+            content: `
+                <p>Prøve 17: krystallskjær, blått i brudd, kaldt i hånd.</p>
+                <p>Test i flamme gir ingen overraskelser: det holder sitt tegn, slik ærlig stein skal.</p>
+                <p class="marginnote">[Tillegg nederst:] “Den som leter etter løgn her, sløser tid.”</p>
+            `
+        },
+        {
+            id: 'reisende_maashkah',
+            icon: '🗺️',
+            badge: 'REISEDAGBOK · MA’ASHKAH',
+            title: 'Reisendes notat: Trærne ved Ma’ashkah',
+            preview: 'En fremmed hånd beskriver skogen som om den hadde vilje...',
+            meta: 'Funnet: I en sammenbrettet reiselogg · Tilstand: Flekk av regn',
+            content: `
+                <p>Trærne ved Ma’ashkah brenner ikke som andre trær. Selv når de dør, virker det som de vokter på noe.</p>
+                <p>Asken er gråsvart og lett som pust, men i flammen gløder den som <em>ametyst i purpurens lys</em> — en dyp fløyelstone som ikke hører hjemme i ved og jord.</p>
+                <p>De lokale sier at det er et varsel, ikke et tegn for handel. Jeg tror dem.</p>
+            
+`
+        },
+        {
+            id: 'inskripsjon_skaaler',
+            icon: '🪨',
+            badge: 'INNSKRIPSJON · RITUALBOLLE',
+            title: 'Riss i bronse: Skålens rand',
+            preview: 'Kort tekst, nesten som en regel. Noen bokstaver er slitt av varme...',
+            meta: 'Avskrift gjort på stedet · Original: Delvis uleselig',
+            content: `
+                <div class="inscription">
+                    Seks skåler.<br>
+                    Én flamme.<br>
+                    Øyet vil ha pynt — ilden vil ha sannhet.
+                </div>
+            `
+        },
+        {
+            id: 'kston_brent',
+            icon: '🔥',
+            badge: 'DAGBOK · K’STON (NESTEN BRENT BORT)',
+            title: 'Ukjent hånd: Fragment fra K’ston',
+            preview: 'Bare korte ord står igjen mellom sot og hull. Resten er borte...',
+            meta: 'Funnet: I en sprekk ved steinhellen · Tilstand: Svært brannskadet',
+            content: `
+                <p>[Mesteparten er uleselig. Ord som kan tydes er markert under:]</p>
+                <p>… <em>gitter</em> … <em>trone</em> … “ikke se ned” …</p>
+                <p>… prøvde igjen … <span class="scratched">seks</span> … “feil” …</p>
+                <p class="highlight">… rommet pustet skygge …</p>
+                <p>… “han vet hva du frykter” … <em>Skyggekongen</em> …</p>
+            `
+        },
+        {
+            id: 'laerebok_sannfarge',
+            icon: '📚',
+            badge: 'LÆREBOKSIDE · ELEMENTLÆRE',
+            title: 'Om synfarge og sannfarge',
+            preview: 'En slitt side, brukt til undervisning eller prøver. Noen har ringet inn ord...',
+            meta: 'Funnet: I en bunke med pergament · Tilstand: Hel, men falmet',
+            content: `
+                <p>I elementlære brukes begrepet <em>sannfarge</em> om det en flamme avslører, ikke det et stoff later som det er.</p>
+                <p>Dette er grunnen til at alkymister brenner prøver i små skåler: ikke for å ødelegge, men for å avsløre.</p>
+                <p>Vokt deg for to feil: å stole blindt på øyet, og å tro at én prøve gir alle svar.</p>
+            `
+        },
+        {
+            id: 'steinriss_halvsetning',
+            icon: '🗝️',
+            badge: 'STEINRISS · UFULLSTENDIG',
+            title: 'Halv setning ved forseglingen',
+            preview: 'En risset linje som stopper brått. Som om verktøyet gled, eller hånden ble dratt bort...',
+            meta: 'Funnet: Ved foten av forseglingen · Tilstand: Delvis slipt ned',
+            content: `
+                <p class="centered"><em>— RISS I STEIN —</em></p>
+                <p class="centered">“Sett ikke det du <em>ser</em> … sett det som <em>står opp</em> …”</p>
+                <p class="centered">[resten mangler]</p>
+            `
+        }
+
+        ,
+        {
+            id: 'skogbrann_askehavn',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Skogbrann utenfor Askehavn',
+            preview: 'Et bilde av flammer som spiser seg innover mot byen. Himmelen er oransje. Ingen mennesker er avbildet...',
+            meta: 'Funnet: Rullet inn i et kart over Askehavn · Tilstand: Godt bevart, lett sotet langs kanten',
+            content: `
+                <p><em>Ingen dato. Kort merknad. Gravplassen, ilden og skogen.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Skogbrann_utenfor_Askehavn.png"
+                         alt="Skogbrann utenfor Askehavn"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Arkivaren skriver: Funnet i Roims ruiner.</p>
+            `
+        }
+
+        ,
+        {
+            id: 'aapningen_av_arkivet',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Åpningen av arkivet',
+            preview: 'Et stort bilde uten påskrift. Noen har forsøkt å rulle det inn og legge det bort – uten hell...',
+            meta: 'Funnet: Oppbevart i et rør, pakket inn i lerret · Tilstand: Godt bevart',
+            content: `
+                <p><em>Ingen dato. Ingen signaturer. Bare bildet.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Åpningen_av_arkivet.png"
+                         alt="Åpningen av arkivet"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Det er uvisst om dette viser den første åpningen, eller den siste.</p>
+            `
+        }
+
+        ,
+        {
+            id: 'samling_av_de_utvalgte',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Samling av de utvalgte',
+            preview: 'Et bilde med litt forklaring.',
+            meta: 'Funnet: Innrullet og forseglet med voks · Tilstand: Godt bevart',
+            content: `
+                <p><em>Enkel tittel. De utvalgtes navn. Alvorlige ansikter.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Samling_av_de_utvalgte.png"
+                         alt="Samling av de utvalgte"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Arkivaren har ikke etterlatt seg noen merknad.</p>
+            `
+        }
+
+        ,
+        {
+            id: 'skyggekongens_trone',
+            icon: '🖼️',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Skyggekongens svevende trone',
+            preview: 'Et bilde funnet løst i bunnen av en skuff. Ingen tekst på baksiden. Ingen signatur...',
+            meta: 'Funnet: Løst ark, bunnen av en skuff · Tilstand: Godt bevart, kantene litt gulnet',
+            content: `
+                <p><em>Ingen vet hvem som har laget dette. Ingen vet når.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Skyggekongens_svevende_trone.png"
+                         alt="Skyggekongens svevende trone"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Tronen henger i luften uten støtte. Rundt den: bare mørke.</p>
+                <p>Arkivaren som la det bort skrev ingenting. Det er i seg selv et tegn.</p>
+            `
+        }
+
+        ,
+        {
+            id: 'skriftrull_for_binding',
+            icon: '📜',
+            badge: 'ILLUSTRASJON · UKJENT OPPHAV',
+            title: 'Skriftrull for binding',
+            preview: 'En rullet pergamentstripe med symboler langs kanten. Noen av tegnene ligner seglskrift – andre ligner ingenting kjent...',
+            meta: 'Funnet: Rullet og bundet med sort snor · Tilstand: Godt bevart, blekket uvanlig mørkt',
+            content: `
+                <p><em>Ingen dato. Ingen avsender. Bare rullen og tegnene.</em></p>
+                <div style="text-align:center; margin: 1.5em 0;">
+                    <img src="Skriftrull_for_binding.png"
+                         alt="Skriftrull for binding"
+                         style="max-width:100%; max-height:70vh; border: 1px solid #3a2810; box-shadow: 0 0 24px rgba(0,0,0,0.8);" />
+                </div>
+                <p>Om rullen er ment som en nøkkel, en forsegling, eller noe annet – det har arkivaren ikke nedtegnet.</p>
+            `
+        }
+
+        ,
+        {
+            id: 'skjult_fabel',
+            icon: '🕯️',
+            hidden: true,
+            reveal_on: 'entroneavskygge',
+            badge: 'SKJULT FRAGMENT · NØKKELORD',
+            title: 'Fabelen om Slektens Ild',
+            preview: 'Et stykke tekst som ikke lar seg finne i vanlig lesning. Blekket virker nyere enn resten...',
+            meta: 'Status: Usynlig uten nøkkelord · Merknad: Håndskrift ukjent',
+            content: `
+                <p><em>[Denne siden virker blank ved første øyekast. Når nøkkelordet formes, stiger skriften frem i kanten av lyset.]</em></p>
+
+                <p>Da seglet ble reist, trådte <em>Sønnen</em> frem først. Han var den yngste, men lyset fulgte ham hvor enn han gikk.</p>
+                <p>Etter ham kom <em>Storebror</em>. Han bar jord under neglene og liv i hendene; der han sto, våknet det som før lå stille.</p>
+                <p>Så kom <em>Far</em>. Han talte lavt, og pusten hans var blek som morgentåke; der han passerte, stilnet alt.</p>
+                <p><em>Bestefar</em> fulgte, stille og uforanderlig. Han var som fjellet – det som ser alt og flytter seg for ingen.</p>
+                <p>Deretter kom <em>Oldefar</em>. I hans nærvær lå en dyp glød, som en edelsten skjult i mørk fløyel.</p>
+                <p>Til sist reiste <em>Den Eldste</em> seg. I ham var blodet, ilden og arven samlet — og da han tok sin plass, åpnet seglet seg.</p>
+            `
+        }
+
+    ];
+
+    
+// Build a plain-text search index (strip HTML from content)
+const stripHtml = (html) => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return (tmp.textContent || tmp.innerText || '').replace(/\s+/g, ' ').trim();
+};
+
+const normalize = (s) => (s || '').toString().trim().toLowerCase();
+
+documents.forEach(d => {
+    d._searchText = [
+        d.badge,
+        d.title,
+        d.preview,
+        d.meta,
+        stripHtml(d.content)
+    ].join(' ').toLowerCase();
+});
+
+// ── Shelf layout (4 hyller, 12 skuffer hver) ──
+// Merk: Vi legger KUN plassering på dokumentene; innholdet er identisk med v5/v6.
+const shelves = [
+    {
+        label: 'Hylle I',
+        drawers: [
+            'aldor_roim',          // 01
+            'aske_skyggekongen',   // 02
+            'song_haeraskarr',     // 03
+            'alkamtal_drakeolog',  // 04
+            'iddros_myr_lotus',    // 05
+            'gravvokter_gravperle',// 06
+            'lhorg_protokoll',     // 07
+            'reisende_maashkah',   // 08
+            'inskripsjon_skaaler', // 09
+            'kston_brent',         // 10
+            null,                  // 11
+            null                   // 12
+        ]
+    },
+    {
+        label: 'Hylle II',
+        drawers: [
+            'laerebok_sannfarge',  // 01
+            'steinriss_halvsetning',// 02
+            null, null, null, null, null, null, null, null, null,
+            null                  // 12
+        ]
+    },
+    {
+        label: 'Hylle III',
+        drawers: [
+            'skogbrann_askehavn',      // 01
+            'aapningen_av_arkivet',    // 02
+            null, null, null,
+            'samling_av_de_utvalgte',  // 06
+            null,
+            'skyggekongens_trone',     // 08
+            null, null,
+            'skriftrull_for_binding',  // 11
+            null
+        ]
+    },
+    {
+        label: 'Hylle IV',
+        drawers: [
+            null, null, null, null, null, null, null, null, null, null, null,
+            'skjult_fabel'         // 12 (skjult – krever nøkkelord)
+        ]
+    }
+];
